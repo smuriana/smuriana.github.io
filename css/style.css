@@ -50,6 +50,27 @@ html {
            transform hover:-translate-y-1 transition-all duration-300;
 }
 
+/* Experience cards */
+.experience-card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+/* Education cards */
+.education-card {
+    @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+/* Date badge */
+.date-badge {
+    @apply inline-block bg-blue-50 text-blue-700 px-4 py-2 rounded-lg font-medium text-sm;
+}
+
+/* Technology tags */
+.tech-tag {
+    @apply inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-md text-sm
+           hover:bg-gray-200 transition-colors duration-200 cursor-default;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
