@@ -4,7 +4,7 @@ Personal portfolio and contact page hosted on GitHub Pages.
 
 ## Live Site
 
-[https://sergiom.github.io](https://sergiom.github.io)
+[https://smuriana.github.io](https://smuriana.github.io)
 
 ## About
 
@@ -27,7 +27,7 @@ This is a personal website built with modern web technologies, featuring:
 ## Project Structure
 
 ```
-sergiom.github.io/
+smuriana.github.io/
 ├── index.html          # Main HTML file
 ├── css/
 │   └── style.css      # Custom CSS styles
@@ -111,16 +111,16 @@ Don't forget to add navigation links in the header!
 
 ### GitHub Pages Setup
 
-1. **Create a GitHub repository** named `sergiom.github.io`
+1. **Create a GitHub repository** named `smuriana.github.io`
 
 2. **Initialize git and push**:
    ```bash
-   cd /Users/sergio/dev/sergiom.github.io
+   cd /Users/sergio/dev/smuriana.github.io
    git init
    git add .
    git commit -m "Initial commit: Personal website"
    git branch -M main
-   git remote add origin https://github.com/sergiom/sergiom.github.io.git
+   git remote add origin https://github.com/smuriana/smuriana.github.io.git
    git push -u origin main
    ```
 
@@ -131,7 +131,7 @@ Don't forget to add navigation links in the header!
    - Save
 
 4. **Wait for deployment** (1-2 minutes)
-   - Your site will be live at: `https://sergiom.github.io`
+   - Your site will be live at: `https://smuriana.github.io`
 
 ### Custom Domain (Optional)
 
@@ -203,8 +203,8 @@ This project is open source and available for personal use.
 
 For questions or feedback, reach out via:
 - Email: your.email@example.com
-- GitHub: [@sergiom](https://github.com/sergiom)
-- LinkedIn: [linkedin.com/in/sergiom](https://linkedin.com/in/sergiom)
+- GitHub: [@smuriana](https://github.com/smuriana)
+- LinkedIn: [linkedin.com/in/smuriana](https://linkedin.com/in/smuriana)
 
 ---
 
