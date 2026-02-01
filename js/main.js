@@ -1,4 +1,4 @@
-// Main JavaScript for personal website
+// Infrastructure as Art - Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
 
-            // Don't prevent default for # only (used for menu toggle)
             if (href === '#') {
                 return;
             }
@@ -50,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const target = document.querySelector(href);
 
             if (target) {
-                const navHeight = document.querySelector('nav').offsetHeight;
+                const nav = document.querySelector('nav');
+                const navHeight = nav ? nav.offsetHeight : 0;
                 const targetPosition = target.offsetTop - navHeight;
 
                 window.scrollTo({
@@ -75,48 +75,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
-                    link.classList.remove('text-blue-600');
+                    link.classList.remove('active');
                     if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('text-blue-600');
+                        link.classList.add('active');
                     }
                 });
             }
         });
     }
 
-    // Run on scroll
     window.addEventListener('scroll', highlightNavigation);
-    // Run on load
     highlightNavigation();
 
-    // Add animation on scroll (fade in elements)
+    // Scroll-triggered animations
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const fadeInObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('visible');
+                fadeInObserver.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe all sections
-    sections.forEach(section => {
-        observer.observe(section);
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        fadeInObserver.observe(el);
     });
 
-    // Add current year to footer
-    const currentYear = new Date().getFullYear();
-    const footerYear = document.querySelector('footer p');
-    if (footerYear && footerYear.textContent.includes('2024')) {
-        footerYear.textContent = footerYear.textContent.replace('2024', currentYear);
-    }
-
-    // Handle external links (open in new tab with security)
+    // Handle external links
     document.querySelectorAll('a[href^="http"]').forEach(link => {
         if (!link.hasAttribute('target')) {
             link.setAttribute('target', '_blank');
@@ -124,15 +115,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    console.log('Personal website initialized successfully!');
-});
+    // Parallax effect for hero decoration
+    const heroDecoration = document.querySelector('.hero-decoration');
+    if (heroDecoration) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.3;
+            heroDecoration.style.transform = `translateY(calc(-50% + ${rate}px))`;
+        });
+    }
 
-// Optional: Add a simple "back to top" functionality
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Add subtle glow effect to nav on scroll
+    const nav = document.querySelector('.nav-container');
+    if (nav) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 0 30px rgba(0, 255, 136, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    }
 
-    // You can add a "back to top" button later if needed
-    // For now, this is just a placeholder for future enhancements
+    console.log('Infrastructure as Art - Portfolio initialized');
 });
 
 // Export CV to PDF using browser print
@@ -143,7 +148,6 @@ function exportToPDF() {
 // Obfuscated contact details (base64 encoded to prevent basic scraping)
 // These are only displayed in the PDF export, not on the public website
 (function() {
-    // Decode base64 with UTF-8 support
     const d = function(s) {
         try {
             return decodeURIComponent(atob(s).split('').map(function(c) {
@@ -154,7 +158,6 @@ function exportToPDF() {
         }
     };
 
-    // Encoded contact details
     const c = {
         e: 'c2VyZ2lvLm11cmlhbmFAZ21haWwuY29t',
         p: 'KzM0IDY3NyAxMDcgMDg2',

@@ -1,466 +1,507 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sergio Muriana Cobo - Platform / DevOps Engineer specializing in Kubernetes, CI/CD, and cloud infrastructure">
     <title>Sergio Muriana Cobo | Platform / DevOps Engineer</title>
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS for utilities -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS (after Tailwind to override) -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body>
+    <!-- Background effects -->
+    <div class="grid-bg"></div>
+    <div class="noise-overlay"></div>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50 no-print">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors">
-                        SM
-                    </a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="flex space-x-8">
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+
+        <!-- Navigation -->
+        <nav class="nav-container fixed w-full top-0 z-50 no-print">
+            <div class="container">
+                <div class="flex justify-between items-center h-16">
+                    <a href="#home" class="nav-logo">SM</a>
+                    <div class="hidden md:flex items-center space-x-2">
                         <a href="#home" class="nav-link">Home</a>
                         <a href="#about" class="nav-link">About</a>
                         <a href="#experience" class="nav-link">Experience</a>
                         <a href="#education" class="nav-link">Education</a>
                         <a href="#contact" class="nav-link">Contact</a>
                     </div>
-                </div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-green-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="mobile-nav-link">Home</a>
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#experience" class="mobile-nav-link">Experience</a>
-                <a href="#education" class="mobile-nav-link">Education</a>
-                <a href="#contact" class="mobile-nav-link">Contact</a>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mobile-menu">
+                <div class="px-4 py-3 space-y-1">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#education" class="mobile-nav-link">Education</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Print-only Contact Info -->
+        <div id="print-contact" class="print-only">
+            <div class="print-contact-inner">
+                <span id="contact-email"></span>
+                <span class="print-separator">|</span>
+                <span id="contact-phone"></span>
+                <span class="print-separator">|</span>
+                <span id="contact-location"></span>
             </div>
         </div>
-    </nav>
 
-    <!-- Print-only Contact Info (hidden on screen, visible in PDF) -->
-    <div id="print-contact" class="print-only">
-        <div class="print-contact-inner">
-            <span id="contact-email"></span>
-            <span class="print-separator">|</span>
-            <span id="contact-phone"></span>
-            <span class="print-separator">|</span>
-            <span id="contact-location"></span>
-        </div>
-    </div>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="fade-in-up">
+                        <div class="hero-terminal">
+                            <div class="hero-terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                                <span class="hero-terminal-title">~/sergio/portfolio</span>
+                            </div>
+                            <div class="hero-terminal-body">
+                                <p class="hero-greeting">$ whoami</p>
+                                <h1 class="hero-name">
+                                    Sergio <span class="accent">Muriana</span> Cobo
+                                </h1>
+                                <p class="hero-role">Platform / DevOps Engineer</p>
+                                <p class="hero-description">
+                                    Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
+                                </p>
+                                <div class="status-indicator hidden">
+                                    <span class="status-dot"></span>
+                                    Available for opportunities
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                        Hi, I'm <span class="text-blue-600">Sergio Muriana Cobo</span>
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-700 mb-6">
-                        Platform / DevOps Engineer
-                    </p>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="btn-primary">
-                            Get In Touch
-                        </a>
-                        <a href="#about" class="btn-secondary">
-                            Learn More
-                        </a>
-                        <button onclick="exportToPDF()" class="btn-secondary print:hidden">
-                            <i class="fas fa-file-pdf mr-2"></i>Export CV
-                        </button>
+                        <div class="hero-buttons flex flex-wrap gap-4 mt-8 no-print">
+                            <a href="#contact" class="btn-primary">
+                                <i class="fas fa-terminal"></i>
+                                Get In Touch
+                            </a>
+                            <a href="#about" class="btn-secondary">
+                                <i class="fas fa-arrow-down"></i>
+                                Learn More
+                            </a>
+                            <button onclick="exportToPDF()" class="btn-secondary">
+                                <i class="fas fa-file-pdf"></i>
+                                Export CV
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Decorative code block -->
+                    <div class="hero-decoration hidden lg:block fade-in-up stagger-2">
+                        <pre class="hero-code-block">
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sergio-muriana
+  labels:
+    app: platform-engineer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: devops
+  template:
+    metadata:
+      labels:
+        role: devops
+        experience: senior
+    spec:
+      containers:
+      - name: engineer
+        image: smuriana:latest
+        ports:
+        - containerPort: 443
+        resources:
+          requests:
+            kubernetes: expert
+            cicd: expert
+            observability: expert
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 443
+          initialDelaySeconds: 0
+          periodSeconds: 86400
+                        </pre>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center shadow-2xl">
-                            <!-- Placeholder for profile image -->
-                            <i class="fas fa-user text-white text-8xl opacity-50"></i>
-                            <!-- Replace with actual image: -->
-                            <!-- <img src="images/profile.jpg" alt="Sergio M" class="w-full h-full rounded-full object-cover"> -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="fade-in-up">
+                    <p class="section-title">about</p>
+                    <h2 class="section-heading">Who I Am</h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text fade-in-up stagger-1">
+                        <p>
+                            I'm a <strong>Platform / DevOps Engineer</strong> currently working at <strong>PhoenixNAP</strong> (since 2020), where I focus on operating and evolving core production infrastructure. My work spans authentication platforms, CI/CD pipelines, Kubernetes-based workloads, and comprehensive observability solutions.
+                        </p>
+                        <p>
+                            Previously at <strong>Glownet</strong> (2016-2019), I wore multiple hats as an Android Developer building NFC-based payment systems for 2M+ users, Info Security Manager leading security audits and GDPR compliance, and Site Reliability Engineer implementing AWS autoscaling solutions.
+                        </p>
+                        <p>
+                            I act as a cross-team technical reference, supporting multiple engineering teams and mentoring teammates, with a strong focus on reliability, automation, and best practices.
+                        </p>
+
+                        <h3 class="text-lg font-semibold mt-8 mb-4" style="color: var(--text-primary); font-family: var(--font-mono);">Areas of Expertise</h3>
+                        <ul class="expertise-list">
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                Platform Engineering & SRE
+                            </li>
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                Kubernetes & Container Orchestration
+                            </li>
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                Observability & Monitoring
+                            </li>
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                CI/CD & GitOps
+                            </li>
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                Security & Compliance
+                            </li>
+                            <li class="expertise-item">
+                                <span class="expertise-icon">[+]</span>
+                                Team Mentoring & Technical Leadership
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="fade-in-up stagger-2">
+                        <div class="skills-container">
+                            <div class="skills-header">skills.yaml</div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">Infrastructure</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">Kubernetes</span>
+                                    <span class="skill-badge">Docker</span>
+                                    <span class="skill-badge">GitOps (Flux CD)</span>
+                                    <span class="skill-badge">AWS</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">CI/CD & Tools</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">GitLab</span>
+                                    <span class="skill-badge">CI/CD</span>
+                                    <span class="skill-badge">Git</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">Observability</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">Prometheus</span>
+                                    <span class="skill-badge">Grafana</span>
+                                    <span class="skill-badge">Kibana</span>
+                                    <span class="skill-badge">OpenSearch</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">Platform</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">Keycloak</span>
+                                    <span class="skill-badge">Apigee</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">Languages</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">Java</span>
+                                    <span class="skill-badge">Python</span>
+                                    <span class="skill-badge">Android</span>
+                                </div>
+                            </div>
+
+                            <div class="skill-category">
+                                <p class="skill-category-title">Security</p>
+                                <div class="skill-tags">
+                                    <span class="skill-badge">ELK/Wazuh</span>
+                                    <span class="skill-badge">Security & GDPR</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">About Me</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Who I Am</h3>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        I'm a Platform / DevOps Engineer currently working at PhoenixNAP (since 2020), where I focus on operating
-                        and evolving core production infrastructure. My work spans authentication platforms, CI/CD pipelines,
-                        Kubernetes-based workloads, and comprehensive observability solutions.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        Previously at Glownet (2016-2019), I wore multiple hats as an Android Developer building NFC-based payment
-                        systems for 2M+ users, Info Security Manager leading security audits and GDPR compliance, and Site Reliability
-                        Engineer implementing AWS autoscaling solutions.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        I act as a cross-team technical reference, supporting multiple engineering teams and mentoring teammates,
-                        with a strong focus on reliability, automation, and best practices.
-                    </p>
+        <!-- Professional Experience Section -->
+        <section id="experience" class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="fade-in-up">
+                    <p class="section-title">experience</p>
+                    <h2 class="section-heading">Deployment History</h2>
                 </div>
 
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Skills & Technologies</h3>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="skill-badge">Kubernetes</span>
-                        <span class="skill-badge">Docker</span>
-                        <span class="skill-badge">GitOps (Flux CD)</span>
-                        <span class="skill-badge">CI/CD</span>
-                        <span class="skill-badge">GitLab</span>
-                        <span class="skill-badge">Prometheus</span>
-                        <span class="skill-badge">Grafana</span>
-                        <span class="skill-badge">Kibana</span>
-                        <span class="skill-badge">OpenSearch</span>
-                        <span class="skill-badge">Keycloak</span>
-                        <span class="skill-badge">Apigee</span>
-                        <span class="skill-badge">AWS</span>
-                        <span class="skill-badge">Java</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Android</span>
-                        <span class="skill-badge">RxJava</span>
-                        <span class="skill-badge">Dagger2</span>
-                        <span class="skill-badge">Git</span>
-                        <span class="skill-badge">ELK/Wazuh</span>
-                        <span class="skill-badge">Security & GDPR</span>
-                    </div>
-
-                    <h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">Areas of Expertise</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            Platform Engineering & SRE
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            Kubernetes & Container Orchestration
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            Observability & Monitoring
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            CI/CD & GitOps
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            Security & Compliance
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check-circle text-blue-600 mr-2"></i>
-                            Team Mentoring & Technical Leadership
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-    <section id="experience" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div class="space-y-8">
-                <!-- PhoenixNAP -->
-                <div class="experience-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Platform / DevOps Engineer</h3>
-                            <p class="text-lg text-blue-600 font-semibold">PhoenixNAP</p>
-                            <p class="text-gray-600">Remote</p>
-                        </div>
-                        <div class="mt-2 md:mt-0">
+                <div class="experience-timeline">
+                    <!-- PhoenixNAP -->
+                    <div class="experience-card current fade-in-up stagger-1">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Platform / DevOps Engineer</h3>
+                                <p class="experience-company">PhoenixNAP</p>
+                                <p class="experience-location">Remote</p>
+                            </div>
                             <span class="date-badge">Jan 2020 - Present</span>
                         </div>
-                    </div>
-                    <p class="text-gray-700 mb-3 leading-relaxed">
-                        Platform-focused software engineer responsible for operating and evolving core production infrastructure.
-                        Working on authentication platforms (Keycloak), CI/CD infrastructure, and Kubernetes-based workloads,
-                        with a strong focus on reliability, automation, and observability.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Keycloak</span>
-                        <span class="tech-tag">CI/CD</span>
-                        <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">Prometheus</span>
-                        <span class="tech-tag">Grafana</span>
-                        <span class="tech-tag">Kibana</span>
-                        <span class="tech-tag">OpenSearch</span>
-                        <span class="tech-tag">Apigee</span>
-                        <span class="tech-tag">Flux CD</span>
-                        <span class="tech-tag">GitLab</span>
-                    </div>
-                </div>
-
-                <!-- Glownet -->
-                <div class="experience-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Software Developer</h3>
-                            <p class="text-lg text-blue-600 font-semibold">Glownet</p>
-                            <p class="text-gray-600">Madrid, Spain</p>
+                        <p class="experience-description">
+                            Platform-focused software engineer responsible for operating and evolving core production infrastructure. Working on authentication platforms (Keycloak), CI/CD infrastructure, and Kubernetes-based workloads, with a strong focus on reliability, automation, and observability.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Keycloak</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Prometheus</span>
+                            <span class="tech-tag">Grafana</span>
+                            <span class="tech-tag">Kibana</span>
+                            <span class="tech-tag">OpenSearch</span>
+                            <span class="tech-tag">Apigee</span>
+                            <span class="tech-tag">Flux CD</span>
+                            <span class="tech-tag">GitLab</span>
                         </div>
-                        <div class="mt-2 md:mt-0">
+                    </div>
+
+                    <!-- Glownet -->
+                    <div class="experience-card fade-in-up stagger-2">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Software Developer</h3>
+                                <p class="experience-company">Glownet</p>
+                                <p class="experience-location">Madrid, Spain</p>
+                            </div>
                             <span class="date-badge">Feb 2016 - Dec 2019</span>
                         </div>
-                    </div>
-                    <div class="space-y-3 mb-3">
-                        <div>
-                            <p class="font-semibold text-gray-800">Android Developer</p>
-                            <p class="text-gray-700 leading-relaxed">
-                                Developed NFC-based payment app for events with 2M+ unique users. Built from greenfield using
-                                MVP architecture, Clean Code principles, Dagger2, RxJava, and Retrofit. Optimized performance
-                                using Android Profiler and Canary Leak.
-                            </p>
+                        <div class="experience-roles">
+                            <div class="role-item">
+                                <p class="role-title">Android Developer</p>
+                                <p class="role-description">
+                                    Developed NFC-based payment app for events with 2M+ unique users. Built from greenfield using MVP architecture, Clean Code principles, Dagger2, RxJava, and Retrofit.
+                                </p>
+                            </div>
+                            <div class="role-item">
+                                <p class="role-title">Info Security Manager</p>
+                                <p class="role-description">
+                                    Led security audits, implemented static code analysis, deployed ELK/Wazuh HIDS, and ensured GDPR compliance.
+                                </p>
+                            </div>
+                            <div class="role-item">
+                                <p class="role-title">Site Reliability Engineer</p>
+                                <p class="role-description">
+                                    Implemented AWS autoscaling systems to ensure server reliability and availability.
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Info Security Manager</p>
-                            <p class="text-gray-700 leading-relaxed">
-                                Led security audits, implemented static code analysis, deployed ELK/Wazuh HIDS, and ensured GDPR compliance.
-                            </p>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-gray-800">Site Reliability Engineer</p>
-                            <p class="text-gray-700 leading-relaxed">
-                                Implemented AWS autoscaling systems to ensure server reliability and availability.
-                            </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">MVP</span>
+                            <span class="tech-tag">RxJava</span>
+                            <span class="tech-tag">Dagger2</span>
+                            <span class="tech-tag">NFC</span>
+                            <span class="tech-tag">Security</span>
+                            <span class="tech-tag">GDPR</span>
+                            <span class="tech-tag">ELK/Wazuh</span>
+                            <span class="tech-tag">AWS</span>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">MVP</span>
-                        <span class="tech-tag">RxJava</span>
-                        <span class="tech-tag">Dagger2</span>
-                        <span class="tech-tag">NFC</span>
-                        <span class="tech-tag">Security</span>
-                        <span class="tech-tag">GDPR</span>
-                        <span class="tech-tag">ELK/Wazuh</span>
-                        <span class="tech-tag">AWS</span>
-                    </div>
-                </div>
 
-                <!-- Freelance -->
-                <div class="experience-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Freelance Developer</h3>
-                            <p class="text-lg text-blue-600 font-semibold">Self-Employed</p>
-                        </div>
-                        <div class="mt-2 md:mt-0">
+                    <!-- Freelance -->
+                    <div class="experience-card fade-in-up stagger-3">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Freelance Developer</h3>
+                                <p class="experience-company">Self-Employed</p>
+                            </div>
                             <span class="date-badge">Jun 2013 - Aug 2016</span>
                         </div>
-                    </div>
-                    <p class="text-gray-700 mb-3 leading-relaxed">
-                        Worked on diverse projects using Java, PHP, HTML, JavaScript, and CSS. Built Android applications
-                        and web solutions with frameworks like SlimPHP, Joomla, and WordPress.
-                    </p>
-                    <p class="text-gray-700 mb-3 leading-relaxed">
-                        <strong>Notable Project:</strong> Developed a prototype for RENFE (Spain's national train company) providing
-                        real-time train arrival estimates using geolocation, alarms, and customizable UI.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Joomla</span>
-                        <span class="tech-tag">WordPress</span>
-                    </div>
-                </div>
-
-                <!-- Enala -->
-                <div class="experience-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Software Developer</h3>
-                            <p class="text-lg text-blue-600 font-semibold">Enala</p>
-                            <p class="text-gray-600">Jaén, Spain</p>
+                        <p class="experience-description">
+                            Worked on diverse projects using Java, PHP, HTML, JavaScript, and CSS. Built Android applications and web solutions with frameworks like SlimPHP, Joomla, and WordPress.
+                        </p>
+                        <p class="experience-description">
+                            <strong style="color: var(--text-primary);">Notable Project:</strong> Developed a prototype for RENFE (Spain's national train company) providing real-time train arrival estimates using geolocation, alarms, and customizable UI.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Joomla</span>
+                            <span class="tech-tag">WordPress</span>
                         </div>
-                        <div class="mt-2 md:mt-0">
+                    </div>
+
+                    <!-- Enala -->
+                    <div class="experience-card fade-in-up stagger-4">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Software Developer</h3>
+                                <p class="experience-company">Enala</p>
+                                <p class="experience-location">Jaén, Spain</p>
+                            </div>
                             <span class="date-badge">Apr 2014 - Oct 2014</span>
                         </div>
-                    </div>
-                    <p class="text-gray-700 mb-3 leading-relaxed">
-                        Developed Android applications for Spanish car insurance companies focused on roadside assistance.
-                        Also worked on frontend and backend development using Java Spring, HTML, and CSS.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Java Spring</span>
-                        <span class="tech-tag">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <!-- Biestable -->
-                <div class="experience-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                        <div>
-                            <h3 class="text-2xl font-bold text-gray-900">Web Developer</h3>
-                            <p class="text-lg text-blue-600 font-semibold">Biestable S.L</p>
-                            <p class="text-gray-600">Jaén, Spain</p>
+                        <p class="experience-description">
+                            Developed Android applications for Spanish car insurance companies focused on roadside assistance. Also worked on frontend and backend development using Java Spring, HTML, and CSS.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Java Spring</span>
+                            <span class="tech-tag">HTML/CSS</span>
                         </div>
-                        <div class="mt-2 md:mt-0">
+                    </div>
+
+                    <!-- Biestable -->
+                    <div class="experience-card fade-in-up stagger-5">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Web Developer</h3>
+                                <p class="experience-company">Biestable S.L</p>
+                                <p class="experience-location">Jaén, Spain</p>
+                            </div>
                             <span class="date-badge">Apr 2009 - Jun 2009</span>
                         </div>
+                        <p class="experience-description">
+                            Worked with Joomla CMS using PHP, HTML, and CSS to build and maintain web applications.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Joomla</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
                     </div>
-                    <p class="text-gray-700 mb-3 leading-relaxed">
-                        Worked with Joomla CMS using PHP, HTML, and CSS to build and maintain web applications.
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="fade-in-up">
+                    <p class="section-title">education</p>
+                    <h2 class="section-heading">Academic Background</h2>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Computer Engineering Degree -->
+                    <div class="education-card fade-in-up stagger-1">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="education-degree">Degree in Computer Engineering</h3>
+                        <p class="education-institution">Universidad de Jaén</p>
+                        <p class="education-meta">Jaén, Spain • 2011 - 2015</p>
+                        <p class="education-details">
+                            Expert in IT with special mention in Business Informatics
+                        </p>
+                        <p class="education-level">EQF Level 6</p>
+                    </div>
+
+                    <!-- Computer Systems Administration -->
+                    <div class="education-card fade-in-up stagger-2">
+                        <div class="education-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3 class="education-degree">Senior Technician in Computer Systems Administration</h3>
+                        <p class="education-institution">I.E.S Virgen del Carmen</p>
+                        <p class="education-meta">Jaén, Spain • 2007 - 2009</p>
+                        <p class="education-details">
+                            Networks maintenance, Linux, relational databases, C, HTML, PHP, JavaScript, and CSS
+                        </p>
+                        <p class="education-level">EQF Level 5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section no-print" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="text-center fade-in-up">
+                    <p class="section-title">contact</p>
+                    <h2 class="section-heading">Get In Touch</h2>
+                    <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem;">
+                        Feel free to connect with me on GitHub or LinkedIn for collaborations, opportunities, or tech discussions.
                     </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-tag">Joomla</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">HTML/CSS</span>
+                </div>
+
+                <div class="contact-grid fade-in-up stagger-1">
+                    <a href="https://github.com/smuriana" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="contact-title">GitHub</h3>
+                        <p class="contact-handle">@smuriana</p>
+                    </a>
+
+                    <a href="https://linkedin.com/in/smuriana" target="_blank" rel="noopener noreferrer" class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h3 class="contact-title">LinkedIn</h3>
+                        <p class="contact-handle">linkedin.com/in/smuriana</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer no-print">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="footer-text">&copy; 2026 Sergio Muriana Cobo. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="https://github.com/smuriana" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/smuriana" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Education Section -->
-    <section id="education" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Education</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Computer Engineering Degree -->
-                <div class="education-card">
-                    <div class="flex items-start mb-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-graduation-cap text-2xl text-blue-600"></i>
-                            </div>
-                        </div>
-                        <div class="ml-4 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Degree in Computer Engineering</h3>
-                            <p class="text-blue-600 font-semibold mb-1">Universidad de Jaén</p>
-                            <p class="text-gray-600 text-sm mb-2">Jaén, Spain • 2011 - 2015</p>
-                            <p class="text-gray-700">
-                                Expert in IT with special mention in Business Informatics
-                            </p>
-                            <p class="text-sm text-gray-500 mt-2">EQF Level 6</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Computer Systems Administration -->
-                <div class="education-card">
-                    <div class="flex items-start mb-4">
-                        <div class="flex-shrink-0">
-                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                <i class="fas fa-certificate text-2xl text-blue-600"></i>
-                            </div>
-                        </div>
-                        <div class="ml-4 flex-grow">
-                            <h3 class="text-xl font-bold text-gray-900 mb-1">Senior Technician in Computer Systems Administration</h3>
-                            <p class="text-blue-600 font-semibold mb-1">I.E.S Virgen del Carmen</p>
-                            <p class="text-gray-600 text-sm mb-2">Jaén, Spain • 2007 - 2009</p>
-                            <p class="text-gray-700">
-                                Networks maintenance, Linux, relational databases, C, HTML, PHP, JavaScript, and CSS
-                            </p>
-                            <p class="text-sm text-gray-500 mt-2">EQF Level 5</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gray-50 no-print">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
-                <p class="text-gray-600 text-lg">
-                    Feel free to connect with me on GitHub or LinkedIn for collaborations, opportunities, or tech discussions!
-                </p>
-            </div>
-
-            <div class="max-w-3xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                    <!-- Contact Cards -->
-                    <a href="https://github.com/smuriana" target="_blank" rel="noopener noreferrer" class="contact-card group">
-                        <div class="text-center">
-                            <div class="inline-block p-4 bg-gray-100 rounded-full mb-4 group-hover:bg-gray-800 transition-colors">
-                                <i class="fab fa-github text-3xl text-gray-800 group-hover:text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">GitHub</h3>
-                            <p class="text-gray-600">@smuriana</p>
-                        </div>
-                    </a>
-
-                    <a href="https://linkedin.com/in/smuriana" target="_blank" rel="noopener noreferrer" class="contact-card group">
-                        <div class="text-center">
-                            <div class="inline-block p-4 bg-blue-100 rounded-full mb-4 group-hover:bg-blue-700 transition-colors">
-                                <i class="fab fa-linkedin text-3xl text-blue-700 group-hover:text-white"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">LinkedIn</h3>
-                            <p class="text-gray-600">linkedin.com/in/smuriana</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8 no-print">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p>&copy; 2026 Sergio Muriana Cobo. All rights reserved.</p>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/smuriana" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
-                        <i class="fab fa-github text-2xl"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/smuriana" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
-                        <i class="fab fa-linkedin text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
