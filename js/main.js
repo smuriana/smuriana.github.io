@@ -115,15 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Parallax effect for hero decoration
-    const heroDecoration = document.querySelector('.hero-decoration');
-    if (heroDecoration) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            heroDecoration.style.transform = `translateY(calc(-50% + ${rate}px))`;
-        });
-    }
 
     // Add subtle glow effect to nav on scroll
     const nav = document.querySelector('.nav-container');

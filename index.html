@@ -32,7 +32,7 @@
         <nav class="nav-container fixed w-full top-0 z-50 no-print">
             <div class="container">
                 <div class="flex justify-between items-center h-16">
-                    <a href="#home" class="nav-logo">SM</a>
+                    <a href="#home" class="nav-logo"><span class="nav-prompt">>_</span>SergioMuriana<span class="nav-cursor"></span></a>
                     <div class="hidden md:flex items-center space-x-2">
                         <a href="#home" class="nav-link">Home</a>
                         <a href="#about" class="nav-link">About</a>
@@ -69,6 +69,13 @@
             </div>
         </div>
 
+        <!-- Print-only Footer (every page) -->
+        <div id="print-footer" class="print-only">
+            <div class="print-footer-inner">
+                CV exported from <span class="print-footer-url">smuriana.github.io</span>
+            </div>
+        </div>
+
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="container">
@@ -83,13 +90,26 @@
                             </div>
                             <div class="hero-terminal-body">
                                 <p class="hero-greeting">$ whoami</p>
-                                <h1 class="hero-name">
-                                    Sergio <span class="accent">Muriana</span> Cobo
-                                </h1>
-                                <p class="hero-role">Platform / DevOps Engineer</p>
-                                <p class="hero-description">
-                                    Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
-                                </p>
+                                <div class="hero-content-grid">
+                                    <div class="hero-text">
+                                        <h1 class="hero-name">
+                                            Sergio <span class="accent">Muriana</span> Cobo
+                                        </h1>
+                                        <p class="hero-role">Platform / DevOps Engineer</p>
+                                        <p class="hero-description">
+                                            Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
+                                        </p>
+                                    </div>
+                                    <div class="hero-photo-hex">
+                                        <div class="hexagon-wrapper">
+                                            <div class="hexagon-border"></div>
+                                            <div class="hexagon-inner">
+                                                <img src="img/sergio-muriana.jpg" alt="Sergio Muriana Cobo" class="hexagon-photo">
+                                            </div>
+                                            <div class="hex-grid"></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="status-indicator hidden">
                                     <span class="status-dot"></span>
                                     Available for opportunities
@@ -115,41 +135,39 @@
 
                     <!-- Decorative code block -->
                     <div class="hero-decoration hidden lg:block fade-in-up stagger-2">
-                        <pre class="hero-code-block">
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: sergio-muriana
-  labels:
-    app: platform-engineer
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      role: devops
-  template:
-    metadata:
-      labels:
-        role: devops
-        experience: senior
-    spec:
-      containers:
-      - name: engineer
-        image: smuriana:latest
-        ports:
-        - containerPort: 443
-        resources:
-          requests:
-            kubernetes: expert
-            cicd: expert
-            observability: expert
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 443
-          initialDelaySeconds: 0
-          periodSeconds: 86400
-                        </pre>
+                        <pre class="hero-code-block"><span class="yaml-key">apiVersion:</span> <span class="yaml-string">apps/v1</span>
+<span class="yaml-key">kind:</span> <span class="yaml-string">Deployment</span>
+<span class="yaml-key">metadata:</span>
+  <span class="yaml-key">name:</span> <span class="yaml-string">sergio-muriana</span>
+  <span class="yaml-key">labels:</span>
+    <span class="yaml-key">app:</span> <span class="yaml-string">platform-engineer</span>
+<span class="yaml-key">spec:</span>
+  <span class="yaml-key">replicas:</span> <span class="yaml-number">1</span>
+  <span class="yaml-key">selector:</span>
+    <span class="yaml-key">matchLabels:</span>
+      <span class="yaml-key">role:</span> <span class="yaml-string">devops</span>
+  <span class="yaml-key">template:</span>
+    <span class="yaml-key">metadata:</span>
+      <span class="yaml-key">labels:</span>
+        <span class="yaml-key">role:</span> <span class="yaml-string">devops</span>
+        <span class="yaml-key">experience:</span> <span class="yaml-string">senior</span>
+    <span class="yaml-key">spec:</span>
+      <span class="yaml-key">containers:</span>
+      - <span class="yaml-key">name:</span> <span class="yaml-string">engineer</span>
+        <span class="yaml-key">image:</span> <span class="yaml-string">smuriana:latest</span>
+        <span class="yaml-key">ports:</span>
+        - <span class="yaml-key">containerPort:</span> <span class="yaml-number">443</span>
+        <span class="yaml-key">resources:</span>
+          <span class="yaml-key">requests:</span>
+            <span class="yaml-key">kubernetes:</span> <span class="yaml-string">advanced</span>
+            <span class="yaml-key">cicd:</span> <span class="yaml-string">proficient</span>
+            <span class="yaml-key">observability:</span> <span class="yaml-string">advanced</span>
+        <span class="yaml-key">livenessProbe:</span>
+          <span class="yaml-key">httpGet:</span>
+            <span class="yaml-key">path:</span> <span class="yaml-string">/health</span>
+            <span class="yaml-key">port:</span> <span class="yaml-number">443</span>
+          <span class="yaml-key">initialDelaySeconds:</span> <span class="yaml-number">0</span>
+          <span class="yaml-key">periodSeconds:</span> <span class="yaml-number">86400</span></pre>
                     </div>
                 </div>
             </div>
