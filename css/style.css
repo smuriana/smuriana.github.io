@@ -225,14 +225,347 @@ img {
     height: auto;
 }
 
-/* Print styles */
+/* Print-only utility class (hidden on screen, visible in print) */
+.print-only {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.print-contact-inner {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 10pt;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 0.5rem;
+}
+
+.print-separator {
+    margin: 0 0.5rem;
+    color: #9ca3af;
+}
+
+/* No-print utility class */
 @media print {
-    nav,
-    footer {
-        display: none;
+    .no-print,
+    .no-print * {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* Print styles for PDF export */
+@media print {
+    /* Show print-only elements */
+    .print-only {
+        display: block !important;
+        visibility: visible !important;
     }
 
+    /* Hide non-essential elements for CV */
+    nav,
+    nav *,
+    footer,
+    footer *,
+    .print\\:hidden,
+    #home .relative,
+    #home .md\\:w-1\\/2.flex.justify-center,
+    #contact,
+    #contact * {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /* Reset page styles */
+    html, body {
+        background: white !important;
+        color: #1a1a1a !important;
+        font-size: 10pt !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Remove shadows, borders and transitions */
+    * {
+        box-shadow: none !important;
+        transition: none !important;
+    }
+
+    /* Page settings */
+    @page {
+        margin: 1.2cm 1.5cm;
+        size: A4;
+    }
+
+    /* Container width */
+    .max-w-6xl {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Section styling */
     section {
-        page-break-inside: avoid;
+        padding: 0.8rem 0 !important;
+        background: white !important;
+    }
+
+    /* Hero section - CV header */
+    #home {
+        padding-top: 0 !important;
+        padding-bottom: 0.5rem !important;
+        background: white !important;
+        border-bottom: 2px solid #2563eb !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    #home > div {
+        padding: 0 !important;
+    }
+
+    #home .flex-col {
+        flex-direction: row !important;
+    }
+
+    #home .md\\:w-1\\/2:first-child {
+        width: 100% !important;
+    }
+
+    #home h1 {
+        font-size: 20pt !important;
+        margin-bottom: 0.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    #home h1 span {
+        color: #2563eb !important;
+    }
+
+    #home p.text-xl,
+    #home p.text-2xl {
+        font-size: 12pt !important;
+        font-weight: 600 !important;
+        color: #4b5563 !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    #home p.text-lg {
+        font-size: 9pt !important;
+        margin-bottom: 0 !important;
+        color: #6b7280 !important;
+    }
+
+    /* Hide buttons in hero */
+    #home .flex.flex-wrap,
+    #home .gap-4 {
+        display: none !important;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 13pt !important;
+        font-weight: 700 !important;
+        margin-bottom: 0.3rem !important;
+        color: #1a1a1a !important;
+    }
+
+    /* Section divider */
+    .text-center.mb-12 {
+        margin-bottom: 0.5rem !important;
+        text-align: left !important;
+    }
+
+    .w-20.h-1.bg-blue-600 {
+        display: none !important;
+    }
+
+    /* About section */
+    #about {
+        padding-top: 0.5rem !important;
+    }
+
+    #about .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+
+    #about h3 {
+        font-size: 11pt !important;
+        font-weight: 600 !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    #about p {
+        font-size: 9pt !important;
+        margin-bottom: 0.3rem !important;
+        text-align: justify !important;
+    }
+
+    #about li {
+        font-size: 9pt !important;
+    }
+
+    /* Experience section */
+    #experience .space-y-8 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.6rem !important;
+    }
+
+    /* Cards - clean borders */
+    .experience-card {
+        background: white !important;
+        padding: 0.6rem !important;
+        margin-bottom: 0 !important;
+        border: 1px solid #e5e7eb !important;
+        border-left: 3px solid #2563eb !important;
+        border-radius: 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    .education-card {
+        background: white !important;
+        padding: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        border: 1px solid #e5e7eb !important;
+        border-left: 3px solid #2563eb !important;
+        border-radius: 0 !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Experience card content */
+    .experience-card h3 {
+        font-size: 11pt !important;
+        font-weight: 700 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .experience-card .text-lg {
+        font-size: 10pt !important;
+        font-weight: 600 !important;
+        color: #2563eb !important;
+    }
+
+    .experience-card .text-gray-600 {
+        font-size: 8pt !important;
+        color: #6b7280 !important;
+    }
+
+    .experience-card p {
+        font-size: 9pt !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    .experience-card .mb-4 {
+        margin-bottom: 0.3rem !important;
+    }
+
+    .experience-card .mb-3 {
+        margin-bottom: 0.2rem !important;
+    }
+
+    /* Education section grid */
+    #education .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.8rem !important;
+    }
+
+    .education-card h3 {
+        font-size: 10pt !important;
+        font-weight: 600 !important;
+    }
+
+    .education-card p {
+        font-size: 9pt !important;
+    }
+
+    .education-card .text-sm {
+        font-size: 8pt !important;
+    }
+
+    /* Date badge */
+    .date-badge {
+        background: #eff6ff !important;
+        color: #1d4ed8 !important;
+        font-size: 8pt !important;
+        padding: 0.15rem 0.4rem !important;
+        border-radius: 3px !important;
+    }
+
+    /* Skill badges */
+    .skill-badge {
+        background: #dbeafe !important;
+        color: #1e40af !important;
+        padding: 0.15rem 0.4rem !important;
+        font-size: 8pt !important;
+        border-radius: 3px !important;
+        margin: 0.1rem !important;
+    }
+
+    /* Tech tags */
+    .tech-tag {
+        background: #f3f4f6 !important;
+        color: #374151 !important;
+        padding: 0.1rem 0.3rem !important;
+        font-size: 7pt !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 2px !important;
+        margin: 0.05rem !important;
+    }
+
+    .flex-wrap.gap-2 {
+        gap: 0.2rem !important;
+    }
+
+    /* Links */
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    /* Icons in education */
+    .education-card .w-12 {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+
+    .education-card .text-2xl {
+        font-size: 1rem !important;
+    }
+
+    /* Spacing adjustments */
+    .space-y-3 > * + * {
+        margin-top: 0.2rem !important;
+    }
+
+    .space-y-2 > * + * {
+        margin-top: 0.15rem !important;
+    }
+
+    /* Font weight for roles */
+    .font-semibold {
+        font-weight: 600 !important;
+    }
+
+    /* Page breaks */
+    #about {
+        page-break-after: avoid !important;
+    }
+
+    #experience {
+        page-break-before: avoid !important;
+    }
+
+    .experience-card:last-child {
+        page-break-after: avoid !important;
     }
 }

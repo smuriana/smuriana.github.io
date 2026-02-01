@@ -18,7 +18,7 @@
 <body class="bg-gray-50 text-gray-900">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50 no-print">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
@@ -55,6 +55,17 @@
         </div>
     </nav>
 
+    <!-- Print-only Contact Info (hidden on screen, visible in PDF) -->
+    <div id="print-contact" class="print-only">
+        <div class="print-contact-inner">
+            <span id="contact-email"></span>
+            <span class="print-separator">|</span>
+            <span id="contact-phone"></span>
+            <span class="print-separator">|</span>
+            <span id="contact-location"></span>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,13 +80,16 @@
                     <p class="text-lg text-gray-600 mb-8">
                         Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex flex-wrap gap-4">
                         <a href="#contact" class="btn-primary">
                             Get In Touch
                         </a>
                         <a href="#about" class="btn-secondary">
                             Learn More
                         </a>
+                        <button onclick="exportToPDF()" class="btn-secondary print:hidden">
+                            <i class="fas fa-file-pdf mr-2"></i>Export CV
+                        </button>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
@@ -392,7 +406,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+    <section id="contact" class="py-16 md:py-24 bg-gray-50 no-print">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="section-title">Get In Touch</h2>
@@ -430,7 +444,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-8">
+    <footer class="bg-gray-900 text-gray-300 py-8 no-print">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">

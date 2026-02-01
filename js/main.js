@@ -134,3 +134,46 @@ window.addEventListener('scroll', function() {
     // You can add a "back to top" button later if needed
     // For now, this is just a placeholder for future enhancements
 });
+
+// Export CV to PDF using browser print
+function exportToPDF() {
+    window.print();
+}
+
+// Obfuscated contact details (base64 encoded to prevent basic scraping)
+// These are only displayed in the PDF export, not on the public website
+(function() {
+    // Decode base64 with UTF-8 support
+    const d = function(s) {
+        try {
+            return decodeURIComponent(atob(s).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        } catch(e) {
+            return atob(s);
+        }
+    };
+
+    // Encoded contact details
+    const c = {
+        e: 'c2VyZ2lvLm11cmlhbmFAZ21haWwuY29t',
+        p: 'KzM0IDY3NyAxMDcgMDg2',
+        l: 'SmHDqW4sIFNwYWlu'
+    };
+
+    const setContact = function() {
+        const emailEl = document.getElementById('contact-email');
+        const phoneEl = document.getElementById('contact-phone');
+        const locationEl = document.getElementById('contact-location');
+
+        if (emailEl) emailEl.textContent = d(c.e);
+        if (phoneEl) phoneEl.textContent = d(c.p);
+        if (locationEl) locationEl.textContent = d(c.l);
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setContact);
+    } else {
+        setContact();
+    }
+})();
