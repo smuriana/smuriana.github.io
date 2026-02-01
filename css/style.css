@@ -1001,6 +1001,12 @@ button:focus {
         visibility: visible !important;
     }
 
+    /* Force all fade-in elements to be visible */
+    .fade-in-up {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     body {
         background: white !important;
         color: #1a1a1a !important;
@@ -1128,6 +1134,10 @@ button:focus {
     }
 
     /* Experience print */
+    #experience {
+        page-break-before: always !important;
+    }
+
     .experience-timeline {
         padding-left: 0 !important;
     }
