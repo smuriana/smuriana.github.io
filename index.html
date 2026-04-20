@@ -34,11 +34,12 @@
                 <div class="flex justify-between items-center h-16">
                     <a href="#home" class="nav-logo"><span class="nav-prompt">>_</span>SergioMuriana<span class="nav-cursor"></span></a>
                     <div class="hidden md:flex items-center space-x-2">
-                        <a href="#home" class="nav-link">Home</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#experience" class="nav-link">Experience</a>
-                        <a href="#education" class="nav-link">Education</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+                        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+                        <a href="#education" class="nav-link" data-i18n="nav.education">Education</a>
+                        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                        <button id="lang-toggle" class="lang-toggle" title="Switch language">ES</button>
                     </div>
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-green-400 focus:outline-none">
@@ -49,11 +50,12 @@
             <!-- Mobile menu -->
             <div id="mobile-menu" class="hidden md:hidden mobile-menu">
                 <div class="px-4 py-3 space-y-1">
-                    <a href="#home" class="mobile-nav-link">Home</a>
-                    <a href="#about" class="mobile-nav-link">About</a>
-                    <a href="#experience" class="mobile-nav-link">Experience</a>
-                    <a href="#education" class="mobile-nav-link">Education</a>
-                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <a href="#home" class="mobile-nav-link" data-i18n="nav.home">Home</a>
+                    <a href="#about" class="mobile-nav-link" data-i18n="nav.about">About</a>
+                    <a href="#experience" class="mobile-nav-link" data-i18n="nav.experience">Experience</a>
+                    <a href="#education" class="mobile-nav-link" data-i18n="nav.education">Education</a>
+                    <a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contact</a>
+                    <button id="lang-toggle-mobile" class="lang-toggle lang-toggle-mobile" title="Switch language">ES</button>
                 </div>
             </div>
         </nav>
@@ -95,8 +97,8 @@
                                         <h1 class="hero-name">
                                             Sergio <span class="accent">Muriana</span> Cobo
                                         </h1>
-                                        <p class="hero-role">Platform / DevOps Engineer</p>
-                                        <p class="hero-description">
+                                        <p class="hero-role" data-i18n="hero.role">Platform / DevOps Engineer</p>
+                                        <p class="hero-description" data-i18n="hero.description">
                                             Specialized in operating and evolving core production infrastructure with a focus on Kubernetes, CI/CD, observability, and automation.
                                         </p>
                                     </div>
@@ -120,15 +122,15 @@
                         <div class="hero-buttons flex flex-wrap gap-4 mt-8 no-print">
                             <a href="#contact" class="btn-primary">
                                 <i class="fas fa-terminal"></i>
-                                Get In Touch
+                                <span data-i18n="hero.btn.contact">Get In Touch</span>
                             </a>
                             <a href="#about" class="btn-secondary">
                                 <i class="fas fa-arrow-down"></i>
-                                Learn More
+                                <span data-i18n="hero.btn.learn">Learn More</span>
                             </a>
                             <button onclick="exportToPDF()" class="btn-secondary">
                                 <i class="fas fa-file-pdf"></i>
-                                Export CV
+                                <span data-i18n="hero.btn.export">Export CV</span>
                             </button>
                         </div>
                     </div>
@@ -177,47 +179,47 @@
         <section id="about" class="section">
             <div class="container">
                 <div class="fade-in-up">
-                    <p class="section-title">about</p>
-                    <h2 class="section-heading">Who I Am</h2>
+                    <p class="section-title" data-i18n="about.label">about</p>
+                    <h2 class="section-heading" data-i18n="about.heading">Who I Am</h2>
                 </div>
 
                 <div class="about-grid">
                     <div class="about-text fade-in-up stagger-1">
-                        <p>
+                        <p data-i18n="about.p1">
                             I'm a <strong>Platform / DevOps Engineer</strong> currently working at <strong>PhoenixNAP</strong> (since 2020), where I focus on operating and evolving core production infrastructure. My work spans authentication platforms, CI/CD pipelines, Kubernetes-based workloads, and comprehensive observability solutions.
                         </p>
-                        <p>
+                        <p data-i18n="about.p2">
                             Previously at <strong>Glownet</strong> (2016-2019), I wore multiple hats as an Android Developer building NFC-based payment systems for 2M+ users, Info Security Manager leading security audits and GDPR compliance, and Site Reliability Engineer implementing AWS autoscaling solutions.
                         </p>
-                        <p>
+                        <p data-i18n="about.p3">
                             I act as a cross-team technical reference, supporting multiple engineering teams and mentoring teammates, with a strong focus on reliability, automation, and best practices.
                         </p>
 
-                        <h3 class="text-lg font-semibold mt-8 mb-4" style="color: var(--text-primary); font-family: var(--font-mono);">Areas of Expertise</h3>
+                        <h3 class="text-lg font-semibold mt-8 mb-4" style="color: var(--text-primary); font-family: var(--font-mono);" data-i18n="about.expertise.heading">Areas of Expertise</h3>
                         <ul class="expertise-list">
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                Platform Engineering & SRE
+                                <span data-i18n="about.expertise.1">Platform Engineering & SRE</span>
                             </li>
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                Kubernetes & Container Orchestration
+                                <span data-i18n="about.expertise.2">Kubernetes & Container Orchestration</span>
                             </li>
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                Observability & Monitoring
+                                <span data-i18n="about.expertise.3">Observability & Monitoring</span>
                             </li>
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                CI/CD & GitOps
+                                <span data-i18n="about.expertise.4">CI/CD & GitOps</span>
                             </li>
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                Security & Compliance
+                                <span data-i18n="about.expertise.5">Security & Compliance</span>
                             </li>
                             <li class="expertise-item">
                                 <span class="expertise-icon">[+]</span>
-                                Team Mentoring & Technical Leadership
+                                <span data-i18n="about.expertise.6">Team Mentoring & Technical Leadership</span>
                             </li>
                         </ul>
                     </div>
@@ -227,7 +229,7 @@
                             <div class="skills-header">skills.yaml</div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">Infrastructure</p>
+                                <p class="skill-category-title" data-i18n="skills.infrastructure">Infrastructure</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">Kubernetes</span>
                                     <span class="skill-badge">Helm</span>
@@ -239,7 +241,7 @@
                             </div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">CI/CD & Tools</p>
+                                <p class="skill-category-title" data-i18n="skills.cicd">CI/CD & Tools</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">GitLab</span>
                                     <span class="skill-badge">CI/CD</span>
@@ -248,7 +250,7 @@
                             </div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">Observability</p>
+                                <p class="skill-category-title" data-i18n="skills.observability">Observability</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">Prometheus</span>
                                     <span class="skill-badge">Grafana</span>
@@ -258,7 +260,7 @@
                             </div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">Platform</p>
+                                <p class="skill-category-title" data-i18n="skills.platform">Platform</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">Keycloak</span>
                                     <span class="skill-badge">Apigee</span>
@@ -266,7 +268,7 @@
                             </div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">Languages</p>
+                                <p class="skill-category-title" data-i18n="skills.languages">Languages</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">Java</span>
                                     <span class="skill-badge">Python</span>
@@ -275,7 +277,7 @@
                             </div>
 
                             <div class="skill-category">
-                                <p class="skill-category-title">Security</p>
+                                <p class="skill-category-title" data-i18n="skills.security">Security</p>
                                 <div class="skill-tags">
                                     <span class="skill-badge">ELK/Wazuh</span>
                                     <span class="skill-badge">Security & GDPR</span>
@@ -291,8 +293,8 @@
         <section id="experience" class="section" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="fade-in-up">
-                    <p class="section-title">experience</p>
-                    <h2 class="section-heading">Deployment History</h2>
+                    <p class="section-title" data-i18n="experience.label">experience</p>
+                    <h2 class="section-heading" data-i18n="experience.heading">Deployment History</h2>
                 </div>
 
                 <div class="experience-timeline">
@@ -300,13 +302,13 @@
                     <div class="experience-card current fade-in-up stagger-1">
                         <div class="experience-header">
                             <div>
-                                <h3 class="experience-title">Platform / DevOps Engineer</h3>
+                                <h3 class="experience-title" data-i18n="exp.phoenixnap.title">Platform / DevOps Engineer</h3>
                                 <p class="experience-company">PhoenixNAP</p>
-                                <p class="experience-location">Remote</p>
+                                <p class="experience-location" data-i18n="exp.phoenixnap.location">Remote</p>
                             </div>
-                            <span class="date-badge">Jan 2020 - Present</span>
+                            <span class="date-badge" data-i18n="exp.phoenixnap.date">Jan 2020 - Present</span>
                         </div>
-                        <p class="experience-description">
+                        <p class="experience-description" data-i18n="exp.phoenixnap.desc">
                             Platform-focused software engineer responsible for operating and evolving core production infrastructure. Working on authentication platforms (Keycloak), CI/CD infrastructure, and Kubernetes-based workloads, with a strong focus on reliability, automation, and observability.
                         </p>
                         <div class="tech-tags">
@@ -327,28 +329,28 @@
                     <div class="experience-card fade-in-up stagger-2">
                         <div class="experience-header">
                             <div>
-                                <h3 class="experience-title">Software Developer</h3>
+                                <h3 class="experience-title" data-i18n="exp.glownet.title">Software Developer</h3>
                                 <p class="experience-company">Glownet</p>
-                                <p class="experience-location">Madrid, Spain</p>
+                                <p class="experience-location" data-i18n="exp.glownet.location">Madrid, Spain</p>
                             </div>
-                            <span class="date-badge">Feb 2016 - Dec 2019</span>
+                            <span class="date-badge" data-i18n="exp.glownet.date">Feb 2016 - Dec 2019</span>
                         </div>
                         <div class="experience-roles">
                             <div class="role-item">
-                                <p class="role-title">Android Developer</p>
-                                <p class="role-description">
+                                <p class="role-title" data-i18n="exp.glownet.role1.title">Android Developer</p>
+                                <p class="role-description" data-i18n="exp.glownet.role1.desc">
                                     Developed NFC-based payment app for events with 2M+ unique users. Built from greenfield using MVP architecture, Clean Code principles, Dagger2, RxJava, and Retrofit.
                                 </p>
                             </div>
                             <div class="role-item">
-                                <p class="role-title">Info Security Manager</p>
-                                <p class="role-description">
+                                <p class="role-title" data-i18n="exp.glownet.role2.title">Info Security Manager</p>
+                                <p class="role-description" data-i18n="exp.glownet.role2.desc">
                                     Led security audits, implemented static code analysis, deployed ELK/Wazuh HIDS, and ensured GDPR compliance.
                                 </p>
                             </div>
                             <div class="role-item">
-                                <p class="role-title">Site Reliability Engineer</p>
-                                <p class="role-description">
+                                <p class="role-title" data-i18n="exp.glownet.role3.title">Site Reliability Engineer</p>
+                                <p class="role-description" data-i18n="exp.glownet.role3.desc">
                                     Implemented AWS autoscaling systems to ensure server reliability and availability.
                                 </p>
                             </div>
@@ -370,15 +372,15 @@
                     <div class="experience-card fade-in-up stagger-3">
                         <div class="experience-header">
                             <div>
-                                <h3 class="experience-title">Freelance Developer</h3>
-                                <p class="experience-company">Self-Employed</p>
+                                <h3 class="experience-title" data-i18n="exp.freelance.title">Freelance Developer</h3>
+                                <p class="experience-company" data-i18n="exp.freelance.company">Self-Employed</p>
                             </div>
-                            <span class="date-badge">Jun 2013 - Aug 2016</span>
+                            <span class="date-badge" data-i18n="exp.freelance.date">Jun 2013 - Aug 2016</span>
                         </div>
-                        <p class="experience-description">
+                        <p class="experience-description" data-i18n="exp.freelance.desc">
                             Worked on diverse projects using Java, PHP, HTML, JavaScript, and CSS. Built Android applications and web solutions with frameworks like SlimPHP, Joomla, and WordPress.
                         </p>
-                        <p class="experience-description">
+                        <p class="experience-description" data-i18n="exp.freelance.notable">
                             <strong style="color: var(--text-primary);">Notable Project:</strong> Developed a prototype for RENFE (Spain's national train company) providing real-time train arrival estimates using geolocation, alarms, and customizable UI.
                         </p>
                         <div class="tech-tags">
@@ -394,13 +396,13 @@
                     <div class="experience-card fade-in-up stagger-4">
                         <div class="experience-header">
                             <div>
-                                <h3 class="experience-title">Software Developer</h3>
+                                <h3 class="experience-title" data-i18n="exp.enala.title">Software Developer</h3>
                                 <p class="experience-company">Enala</p>
-                                <p class="experience-location">Jaén, Spain</p>
+                                <p class="experience-location" data-i18n="exp.enala.location">Jaén, Spain</p>
                             </div>
-                            <span class="date-badge">Apr 2014 - Oct 2014</span>
+                            <span class="date-badge" data-i18n="exp.enala.date">Apr 2014 - Oct 2014</span>
                         </div>
-                        <p class="experience-description">
+                        <p class="experience-description" data-i18n="exp.enala.desc">
                             Developed Android applications for Spanish car insurance companies focused on roadside assistance. Also worked on frontend and backend development using Java Spring, HTML, and CSS.
                         </p>
                         <div class="tech-tags">
@@ -414,13 +416,13 @@
                     <div class="experience-card fade-in-up stagger-5">
                         <div class="experience-header">
                             <div>
-                                <h3 class="experience-title">Web Developer</h3>
+                                <h3 class="experience-title" data-i18n="exp.biestable.title">Web Developer</h3>
                                 <p class="experience-company">Biestable S.L</p>
-                                <p class="experience-location">Jaén, Spain</p>
+                                <p class="experience-location" data-i18n="exp.biestable.location">Jaén, Spain</p>
                             </div>
-                            <span class="date-badge">Apr 2009 - Jun 2009</span>
+                            <span class="date-badge" data-i18n="exp.biestable.date">Apr 2009 - Jun 2009</span>
                         </div>
-                        <p class="experience-description">
+                        <p class="experience-description" data-i18n="exp.biestable.desc">
                             Worked with Joomla CMS using PHP, HTML, and CSS to build and maintain web applications.
                         </p>
                         <div class="tech-tags">
@@ -437,8 +439,8 @@
         <section id="education" class="section">
             <div class="container">
                 <div class="fade-in-up">
-                    <p class="section-title">education</p>
-                    <h2 class="section-heading">Academic Background</h2>
+                    <p class="section-title" data-i18n="education.label">education</p>
+                    <h2 class="section-heading" data-i18n="education.heading">Academic Background</h2>
                 </div>
 
                 <div class="education-grid">
@@ -447,13 +449,13 @@
                         <div class="education-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3 class="education-degree">Degree in Computer Engineering</h3>
+                        <h3 class="education-degree" data-i18n="edu.degree1.title">Degree in Computer Engineering</h3>
                         <p class="education-institution">Universidad de Jaén</p>
-                        <p class="education-meta">Jaén, Spain • 2011 - 2015</p>
-                        <p class="education-details">
+                        <p class="education-meta" data-i18n="edu.degree1.meta">Jaén, Spain • 2011 - 2015</p>
+                        <p class="education-details" data-i18n="edu.degree1.details">
                             Expert in IT with special mention in Business Informatics
                         </p>
-                        <p class="education-level">EQF Level 6</p>
+                        <p class="education-level" data-i18n="edu.degree1.level">EQF Level 6</p>
                     </div>
 
                     <!-- Computer Systems Administration -->
@@ -461,13 +463,26 @@
                         <div class="education-icon">
                             <i class="fas fa-certificate"></i>
                         </div>
-                        <h3 class="education-degree">Senior Technician in Computer Systems Administration</h3>
+                        <h3 class="education-degree" data-i18n="edu.degree2.title">Senior Technician in Computer Systems Administration</h3>
                         <p class="education-institution">I.E.S Virgen del Carmen</p>
-                        <p class="education-meta">Jaén, Spain • 2007 - 2009</p>
-                        <p class="education-details">
+                        <p class="education-meta" data-i18n="edu.degree2.meta">Jaén, Spain • 2007 - 2009</p>
+                        <p class="education-details" data-i18n="edu.degree2.details">
                             Networks maintenance, Linux, relational databases, C, HTML, PHP, JavaScript, and CSS
                         </p>
-                        <p class="education-level">EQF Level 5</p>
+                        <p class="education-level" data-i18n="edu.degree2.level">EQF Level 5</p>
+                    </div>
+
+                    <!-- SSCE22 Tutorización en Teleformación -->
+                    <div class="education-card fade-in-up stagger-3">
+                        <div class="education-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 class="education-degree" data-i18n="edu.degree3.title">SSCE22 Tutorización en Teleformación</h3>
+                        <p class="education-institution">Integra2</p>
+                        <p class="education-meta" data-i18n="edu.degree3.meta">Online • Apr 2026</p>
+                        <p class="education-details" data-i18n="edu.degree3.details">
+                            50-hour online training course
+                        </p>
                     </div>
                 </div>
             </div>
@@ -477,9 +492,9 @@
         <section id="contact" class="section no-print" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="text-center fade-in-up">
-                    <p class="section-title">contact</p>
-                    <h2 class="section-heading">Get In Touch</h2>
-                    <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem;">
+                    <p class="section-title" data-i18n="contact.label">contact</p>
+                    <h2 class="section-heading" data-i18n="contact.heading">Get In Touch</h2>
+                    <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem;" data-i18n="contact.desc">
                         Feel free to connect with me on GitHub or LinkedIn for collaborations, opportunities, or tech discussions.
                     </p>
                 </div>
@@ -508,7 +523,7 @@
         <footer class="footer no-print">
             <div class="container">
                 <div class="footer-content">
-                    <p class="footer-text">&copy; 2026 Sergio Muriana Cobo. Built with <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">Claude Code</a></p>
+                    <p class="footer-text" data-i18n="footer.text">&copy; 2026 Sergio Muriana Cobo. Built with <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green);">Claude Code</a></p>
                     <div class="footer-links">
                         <a href="https://github.com/smuriana" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github text-xl"></i>
